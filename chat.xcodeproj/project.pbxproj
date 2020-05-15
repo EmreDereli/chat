@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,8 +17,23 @@
 		4D0E8C5F24530BD900A53B92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0E8C5D24530BD900A53B92 /* LaunchScreen.storyboard */; };
 		4D0E8C6A24530BDA00A53B92 /* chatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0E8C6924530BDA00A53B92 /* chatTests.swift */; };
 		4D0E8C7524530BDA00A53B92 /* chatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0E8C7424530BDA00A53B92 /* chatUITests.swift */; };
+		4D11BF9A246AAB370098A93D /* UpdateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11BF99246AAB370098A93D /* UpdateUser.swift */; };
+		4D95D65E2453675B00ADA5B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D95D65D2453675B00ADA5B9 /* GoogleService-Info.plist */; };
+		4D97BC4B24549C0A0002C191 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D97BC4A24549C0A0002C191 /* ImagePicker.swift */; };
+		4D97BC4D24549C510002C191 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D97BC4C24549C510002C191 /* Indicator.swift */; };
+		4D97BC4F24549C950002C191 /* AccountCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D97BC4E24549C950002C191 /* AccountCreation.swift */; };
+		4D97BC5124549CE70002C191 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D97BC5024549CE70002C191 /* Home.swift */; };
+		4D97BC5324549D1F0002C191 /* ScndPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D97BC5224549D1F0002C191 /* ScndPage.swift */; };
+		4D97BC5524549D500002C191 /* FirstPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D97BC5424549D500002C191 /* FirstPage.swift */; };
+		4D97BC5724549DAF0002C191 /* CheckUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D97BC5624549DAF0002C191 /* CheckUser.swift */; };
+		4D97BC5924549DEA0002C191 /* CreateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D97BC5824549DEA0002C191 /* CreateUser.swift */; };
+		4DAE71B2246DDBC5007FB10C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAE71B1246DDBC4007FB10C /* ProfileView.swift */; };
+		4DAE71B4246DDC56007FB10C /* ImageModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAE71B3246DDC56007FB10C /* ImageModal.swift */; };
+		4DAE71B6246DEA47007FB10C /* MyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAE71B5246DEA47007FB10C /* MyMessage.swift */; };
+		4DAE71B8246DEDB6007FB10C /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAE71B7246DEDB6007FB10C /* ChatView.swift */; };
+		4DE80AC7246E0188005D890A /* updateStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE80AC6246E0188005D890A /* updateStatus.swift */; };
 		D4412B8610D8E9CCDF1A23B7 /* Pods_chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000BFA16EC1BE8C13BD083B4 /* Pods_chat.framework */; };
-		F14CA18D245319FA00FC7ECF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F14CA18C245319FA00FC7ECF /* GoogleService-Info.plist */; };
+		F18523492455D35400023A04 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F18523482455D35400023A04 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,13 +71,27 @@
 		4D0E8C7024530BDA00A53B92 /* chatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0E8C7424530BDA00A53B92 /* chatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatUITests.swift; sourceTree = "<group>"; };
 		4D0E8C7624530BDA00A53B92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D11BF99246AAB370098A93D /* UpdateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUser.swift; sourceTree = "<group>"; };
+		4D95D65D2453675B00ADA5B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4D97BC4A24549C0A0002C191 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		4D97BC4C24549C510002C191 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
+		4D97BC4E24549C950002C191 /* AccountCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreation.swift; sourceTree = "<group>"; };
+		4D97BC5024549CE70002C191 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		4D97BC5224549D1F0002C191 /* ScndPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScndPage.swift; sourceTree = "<group>"; };
+		4D97BC5424549D500002C191 /* FirstPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPage.swift; sourceTree = "<group>"; };
+		4D97BC5624549DAF0002C191 /* CheckUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUser.swift; sourceTree = "<group>"; };
+		4D97BC5824549DEA0002C191 /* CreateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUser.swift; sourceTree = "<group>"; };
+		4DAE71B1246DDBC4007FB10C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4DAE71B3246DDC56007FB10C /* ImageModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModal.swift; sourceTree = "<group>"; };
+		4DAE71B5246DEA47007FB10C /* MyMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMessage.swift; sourceTree = "<group>"; };
+		4DAE71B7246DEDB6007FB10C /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		4DE80AC6246E0188005D890A /* updateStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateStatus.swift; sourceTree = "<group>"; };
 		788B0F4E1CC0E28BCA4E14B6 /* Pods_chat_chatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chat_chatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7941D6FEB3E5847E4DDC4815 /* Pods-chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chat.release.xcconfig"; path = "Target Support Files/Pods-chat/Pods-chat.release.xcconfig"; sourceTree = "<group>"; };
 		A975C66CB6C2AA07E9F03C5D /* Pods-chat-chatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chat-chatUITests.release.xcconfig"; path = "Target Support Files/Pods-chat-chatUITests/Pods-chat-chatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C2D0169B37C426F2EC3908CA /* Pods-chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chat.debug.xcconfig"; path = "Target Support Files/Pods-chat/Pods-chat.debug.xcconfig"; sourceTree = "<group>"; };
 		CD43757B8C5285A6822197A8 /* Pods-chat-chatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chat-chatUITests.debug.xcconfig"; path = "Target Support Files/Pods-chat-chatUITests/Pods-chat-chatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E554E5FB953C1E183505019F /* Pods-chatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatTests.debug.xcconfig"; path = "Target Support Files/Pods-chatTests/Pods-chatTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F14CA18C245319FA00FC7ECF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F18523492455D35400023A04 /* SDWebImageSwiftUI in Frameworks */,
 				D4412B8610D8E9CCDF1A23B7 /* Pods_chat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,7 +148,9 @@
 		4D0E8C5124530BD300A53B92 /* chat */ = {
 			isa = PBXGroup;
 			children = (
-				F14CA18C245319FA00FC7ECF /* GoogleService-Info.plist */,
+				4D97BC4924549BD40002C191 /* Views */,
+				4D97BC4824549BCA0002C191 /* Models */,
+				4D95D65D2453675B00ADA5B9 /* GoogleService-Info.plist */,
 				4D0E8C5224530BD300A53B92 /* AppDelegate.swift */,
 				4D0E8C5424530BD300A53B92 /* SceneDelegate.swift */,
 				4D0E8C5624530BD300A53B92 /* ContentView.swift */,
@@ -156,6 +188,34 @@
 			path = chatUITests;
 			sourceTree = "<group>";
 		};
+		4D97BC4824549BCA0002C191 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4D97BC5624549DAF0002C191 /* CheckUser.swift */,
+				4D97BC5824549DEA0002C191 /* CreateUser.swift */,
+				4D11BF99246AAB370098A93D /* UpdateUser.swift */,
+				4DE80AC6246E0188005D890A /* updateStatus.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4D97BC4924549BD40002C191 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4D97BC4A24549C0A0002C191 /* ImagePicker.swift */,
+				4D97BC5024549CE70002C191 /* Home.swift */,
+				4D97BC4C24549C510002C191 /* Indicator.swift */,
+				4D97BC4E24549C950002C191 /* AccountCreation.swift */,
+				4D97BC5224549D1F0002C191 /* ScndPage.swift */,
+				4D97BC5424549D500002C191 /* FirstPage.swift */,
+				4DAE71B1246DDBC4007FB10C /* ProfileView.swift */,
+				4DAE71B3246DDC56007FB10C /* ImageModal.swift */,
+				4DAE71B5246DEA47007FB10C /* MyMessage.swift */,
+				4DAE71B7246DEDB6007FB10C /* ChatView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		569F386070CDD8B3B8685C7C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,7 +226,6 @@
 				E554E5FB953C1E183505019F /* Pods-chatTests.debug.xcconfig */,
 				416C536EAC2721D4EC9D7303 /* Pods-chatTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -198,6 +257,9 @@
 			dependencies = (
 			);
 			name = chat;
+			packageProductDependencies = (
+				F18523482455D35400023A04 /* SDWebImageSwiftUI */,
+			);
 			productName = chat;
 			productReference = 4D0E8C4F24530BD300A53B92 /* chat.app */;
 			productType = "com.apple.product-type.application";
@@ -273,6 +335,9 @@
 				Base,
 			);
 			mainGroup = 4D0E8C4624530BD300A53B92;
+			packageReferences = (
+				F18523472455D35400023A04 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 4D0E8C5024530BD300A53B92 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -290,7 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D0E8C5F24530BD900A53B92 /* LaunchScreen.storyboard in Resources */,
-				F14CA18D245319FA00FC7ECF /* GoogleService-Info.plist in Resources */,
+				4D95D65E2453675B00ADA5B9 /* GoogleService-Info.plist in Resources */,
 				4D0E8C5C24530BD900A53B92 /* Preview Assets.xcassets in Resources */,
 				4D0E8C5924530BD900A53B92 /* Assets.xcassets in Resources */,
 			);
@@ -421,8 +486,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D0E8C5324530BD300A53B92 /* AppDelegate.swift in Sources */,
+				4DAE71B2246DDBC5007FB10C /* ProfileView.swift in Sources */,
+				4D11BF9A246AAB370098A93D /* UpdateUser.swift in Sources */,
+				4D97BC4B24549C0A0002C191 /* ImagePicker.swift in Sources */,
+				4DE80AC7246E0188005D890A /* updateStatus.swift in Sources */,
+				4DAE71B8246DEDB6007FB10C /* ChatView.swift in Sources */,
+				4D97BC4F24549C950002C191 /* AccountCreation.swift in Sources */,
 				4D0E8C5524530BD300A53B92 /* SceneDelegate.swift in Sources */,
+				4D97BC4D24549C510002C191 /* Indicator.swift in Sources */,
+				4DAE71B4246DDC56007FB10C /* ImageModal.swift in Sources */,
+				4DAE71B6246DEA47007FB10C /* MyMessage.swift in Sources */,
+				4D97BC5524549D500002C191 /* FirstPage.swift in Sources */,
 				4D0E8C5724530BD300A53B92 /* ContentView.swift in Sources */,
+				4D97BC5724549DAF0002C191 /* CheckUser.swift in Sources */,
+				4D97BC5324549D1F0002C191 /* ScndPage.swift in Sources */,
+				4D97BC5124549CE70002C191 /* Home.swift in Sources */,
+				4D97BC5924549DEA0002C191 /* CreateUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,8 +669,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"chat/Preview Content\"";
+				DEVELOPMENT_TEAM = 9KUUK56CS3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = chat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -610,8 +691,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"chat/Preview Content\"";
+				DEVELOPMENT_TEAM = 9KUUK56CS3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = chat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -747,6 +830,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F18523472455D35400023A04 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F18523482455D35400023A04 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F18523472455D35400023A04 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4D0E8C4724530BD300A53B92 /* Project object */;
 }

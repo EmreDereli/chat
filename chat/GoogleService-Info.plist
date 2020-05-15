@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>727447984950-vkcu12g1j17unlhm91n6mf4s2graftv3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.727447984950-vkcu12g1j17unlhm91n6mf4s2graftv3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCGT1r3Ac7Tc3ELxDS_RTDmuyZBdZL2sEs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>727447984950</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>emredereli.chat</string>
+	<key>PROJECT_ID</key>
+	<string>chatapp-8f2dd</string>
+	<key>STORAGE_BUCKET</key>
+	<string>chatapp-8f2dd.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:727447984950:ios:5fdf90a011261723123197</string>
+	<key>DATABASE_URL</key>
+	<string>https://chatapp-8f2dd.firebaseio.com</string>
+</dict>
+</plist>

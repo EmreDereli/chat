@@ -8,6 +8,8 @@
 
 import SwiftUI
 import Firebase
+import FirebaseFirestore
+import FirebaseStorage
 
 struct ContentView: View {
     
@@ -18,9 +20,13 @@ struct ContentView: View {
         
         VStack{
             
-            if status{
+           if status{
+        
+            NavigationView{
                 
-                Home()
+                Home().environmentObject(MainObservable())
+            }
+            
             }
             else{
                 NavigationView(){
@@ -28,6 +34,10 @@ struct ContentView: View {
                           FirstPage()
                       }
             }
+        
+            
+            
+            
         }.onAppear(){
             
             NotificationCenter.default.addObserver(forName: NSNotification.Name("statusChange"), object: nil, queue: .main){(_) in
@@ -47,203 +57,101 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-struct FirstPage : View {
-    
-    @State var ccode = ""
-    @State var no = ""
-    @State var show = false
-    @State var msg = ""
-    @State var alert = false
-    @State var ID = ""
-    
-    var body : some View{
-        VStack(spacing: 20){
-            
-            Image("pic")
-            
-            Text("Verify Your Number").font(.largeTitle).fontWeight(.heavy)
-            
-            Text("Please Enter Your Number To Verify Your Account")
-                .font(.body)
-                .foregroundColor(.gray)
-                .padding(.top,12)
 
-            HStack{
+class MainObservable : ObservableObject{
+    
+    @Published var recents = [Recent]()
+    @Published var norecetns = false
+    
+    init() {
+        let db = Firestore.firestore()
+        let uid = Auth.auth().currentUser?.uid
+          db.collection("users").document(uid!).collection("recents").order(by: "date", descending: true).addSnapshotListener { (snap, err) in
             
-                TextField("+1",text: $ccode)
-                    .keyboardType(.numberPad)
-                    .frame(width: 45)
-                    .padding()
-                    .background(Color("Color"))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    
+            if err != nil{
                 
-
-                TextField("Number",text: $no)
-                    .keyboardType(.numberPad)
-                    .padding()
-                    .background(Color("Color"))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                print((err?.localizedDescription)!)
+                self.norecetns = true
+                return
+            }
+            
+            if snap!.isEmpty{
+                
+                self.norecetns = true
+            }
+            
+            
+            for i in snap!.documentChanges{
+                
+                if i.type == .added{
+                    
+                    let id = i.document.documentID
+                    let name = i.document.get("name") as! String
+                    let pic = i.document.get("pic") as! String
+                    let lastmsg = i.document.get("lastmsg") as! String
+                    let stamp = i.document.get("date") as! Timestamp
                    
-            }.padding(.top,15)
-            
-            
-            NavigationLink(destination: ScndPage(show: $show, ID: $ID),isActive: $show){
-                Button(action:{
-                    PhoneAuthProvider.provider().verifyPhoneNumber("+"+self.ccode+self.no, uiDelegate: nil){ (ID, err)in
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "dd/MM/yy"
+                    let date = formatter.string(from: stamp.dateValue())
+                                                   
+                    formatter.dateFormat = "hh:mm a"
+                    let time = formatter.string(from: stamp.dateValue())
+                                                   
+                    self.recents.append(Recent(id: id, name: name, pic: pic, lastmsg: lastmsg, time: time, date: date, stamp: stamp.dateValue()))
+                    
+                    
+                }
+                if i.type == .modified{
+                    
+                let name = i.document.get("name") as! String
+                      let id = i.document.documentID
+                let lastmsg = i.document.get("lastmsg") as! String
+                let stamp = i.document.get("date") as! Timestamp
+                                                                     
+                let formatter = DateFormatter()
+                formatter.dateFormat = "dd/MM/yy"
+                let date = formatter.string(from: stamp.dateValue())
+                                                                     
+                formatter.dateFormat = "hh:mm a"
+                let time = formatter.string(from: stamp.dateValue())
+                    
+                    
+                    for j in 0..<self.recents.count{
                         
-                        if err != nil{
-                            
-                            self.msg = (err?.localizedDescription)!
-                            self.alert.toggle()
-                            return
-                            
+                        if self.recents[j].id == id {
+                            self.recents[j].lastmsg = lastmsg
+                            self.recents[j].time = time
+                            self.recents[j].date = date
+                            self.recents[j].stamp = stamp.dateValue()
                         }
-                        self.ID = ID!
-                        self.show.toggle()
+                        
+                        
                     }
                     
-                }){
-                    Text("Send").frame(width: UIScreen.main.bounds.width - 30, height: 50)
                     
-                }.foregroundColor(.white)
-                 .background(Color.orange)
-                 .cornerRadius(10)
+                }
                 
                 
-            }
-            
-            
-            
-             .navigationBarTitle("")
-             .navigationBarHidden(true)
-             .navigationBarBackButtonHidden(true)
-            
-        }.padding()
-        .alert(isPresented: $alert){
-                
-            Alert(title: Text("Error"), message: Text(self.msg), dismissButton: .default(Text("Ok")))
-        }
-        
-    }
-}
-
-
-struct ScndPage : View {
-    
-    @State var code = ""
-    @Binding var show : Bool
-    @Binding var ID : String
-    @State var msg = ""
-    @State var alert = false
-    
-    var body : some View{
-        
-        ZStack(alignment: .topLeading){
-            
-            GeometryReader{_ in
-                
-                VStack(spacing: 20){
-                          
-                          Image("pic")
-                          
-                          Text("Verification Code").font(.largeTitle).fontWeight(.heavy)
-                          
-                          Text("Please Enter Verification Code")
-                              .font(.body)
-                              .foregroundColor(.gray)
-                              .padding(.top,12)
-
-                          
-                          
-                    TextField("Code",text: self.$code)
-                                  .keyboardType(.numberPad)
-                                  .padding()
-                                  .background(Color("Color"))
-                                  .clipShape(RoundedRectangle(cornerRadius: 10))
-                                  .padding(.top,15)
-                          
-                          
-                          
-                          Button(action:{
-                            
-                            let credential =
-                            
-                                PhoneAuthProvider.provider()
-                                .credential(withVerificationID: self.ID,
-                                verificationCode: self.code)
-                            
-                            Auth.auth().signIn(with: credential){ (res,err) in
-                                
-                                   if err != nil{
-                                                       
-                                        self.msg = (err?.localizedDescription)!
-                                        self.alert.toggle()
-                                        return
-                                                       
-                                }
-                                UserDefaults.standard.set(true, forKey: "status")
-                                
-                                NotificationCenter.default.post(name: NSNotification.Name("statusChange"),object:nil)
-                            }
-                            
-                            
-                            
-                          }){
-                              Text("Verify").frame(width: UIScreen.main.bounds.width - 30, height: 50)
-                              
-                          }.foregroundColor(.white)
-                           .background(Color.orange)
-                           .cornerRadius(10)
-                           .navigationBarTitle("")
-                           .navigationBarHidden(true)
-                          .navigationBarBackButtonHidden(true)
-                          
-                          
-                      }
+             
                 
             }
-            Button(action:{
-                                        
-                self.show.toggle()
-                })
-            {
-                Image(systemName: "chevron.left").font(.title)
-                
-            }.foregroundColor(.orange)
-        
-        }
-      .padding()
-      .alert(isPresented: $alert){
-                     
-                 Alert(title: Text("Error"), message: Text(self.msg), dismissButton: .default(Text("Ok")))
-             }
-        
-    }
-}
-
-struct Home : View {
-    
-    var body: some View{
-        
-        VStack{
             
-            
-            Text("Home")
-            
-            Button(action:{
-                                    
-                try! Auth.auth().signOut()
-                
-                UserDefaults.standard.set(false, forKey: "status")
-                                            
-                NotificationCenter.default.post(name:
-                    NSNotification.Name("statusChange"),object:nil)
-                
-            }){
-                 Text("Logout")
-                
-            }
         }
     }
 }
+struct Recent : Identifiable {
+    
+    var id : String
+    var name : String
+    var pic : String
+    var lastmsg : String
+    var time : String
+    var date : String
+    var stamp : Date
+}
+
+
+
+
+
