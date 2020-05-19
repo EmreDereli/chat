@@ -60,9 +60,23 @@ var body : some View {
                             
                             }else{
                                 
-                                OpponentMessage(messageType: i.tip, message: i.msg, url: i.url)
+                                //OpponentMessage(messageType: i.tip, message: i.msg, url: i.url)
                       
-
+                                if i.tip == "img"{
+                                    AnimatedImage(url: URL(string: i.url)!).resizable().renderingMode(.original).frame(width: 150, height: 150).clipShape(ChatBubble(mymsg:false))
+                                           Spacer()
+                                           }
+                                           else{
+                                              
+                                    Text(i.msg)
+                                                                                 .padding(10)
+                                                                                 .background(Color.green)
+                                                                                 .clipShape(ChatBubble(mymsg: false))
+                                                                                 .foregroundColor(.white)
+                                              
+                                Spacer()
+                                                                                      
+                                           }
                                
                                                     
                            }
@@ -203,7 +217,7 @@ func getMsgs(){
                              tip = i.document.get("tip") as! String
                              url = i.document.get("url") as! String
                         }
-                      
+                        print(tip)
                                             
                         self.msgs.append(Msg(id: id, msg: msg, user: user, tip: tip, url: url))
                     }
@@ -232,13 +246,7 @@ func getMsgs(){
         
         db.collection("users").document(uid).addSnapshotListener{ (document, error) in
             
-         
-            /*if document?.get("status") as! Bool == false{
-                   
-                self.status = document?.get("status") as! Bool
-            }else{
-                
-            }*/
+       
              self.status = document?.get("status") as! Bool
         }
         

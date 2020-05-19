@@ -73,8 +73,9 @@ struct Home : View {
                                             let id = self.datas.recents[index.first!].id
                                             let uid = Auth.auth().currentUser?.uid
                                             
-                                            let db = Firestore.firestore().collection("users")
-                                            db.document(uid!).collection("recents").document(id).delete{ (err) in
+                                            let db = Firestore.firestore().collection("msgs")
+                                            let db1 = Firestore.firestore().collection("users")
+                                            db1.document(uid!).collection("recents").document(id).delete{ (err) in
                                                                                            
                                                                                            if err != nil{
                                                                                                
@@ -84,14 +85,25 @@ struct Home : View {
                                                                                            print("deleted succesfull")
                                                                                            self.datas.recents.remove(atOffsets: index)
                                             }
-                                            let opponentID = db.document(uid!).collection("recents").document(id).documentID
-                                            print(opponentID)
+                                           
                                         
+                                            
+                                            db.document(uid!).collection(id).getDocuments{ (snap,err) in
+                                                       if err != nil{
+                                                           print((err?.localizedDescription)!)
+                                                           return
+                                                       }
+                                                                 for document in snap!.documents {
+                                                                     document.reference.delete()
+                                                                 }
+                                        
+                                                             
+                                                   }
+                                            
                                             
                                             
                                         }
-                             //  }.padding()
-                            }
+                        }
                        }
                    }.navigationBarTitle("Sohbetler",displayMode: .inline)
                    .navigationBarItems(leading:
@@ -483,7 +495,7 @@ func sendImageMsg(data:Data, uid:String, date:Date){
         
         storage.child("images").child(name).downloadURL {(url,err)in
             
-             db.collection("msgs").document(myuid!).collection(uid).document().setData(["msg":"", "tip":"img", "user":myuid!, "date":date, "url":"\(url!)"]) { (err) in
+          /*   db.collection("msgs").document(myuid!).collection(uid).document().setData(["msg":"", "tip":"img", "user":myuid!, "date":date, "url":"\(url!)"]) { (err) in
                        
                         if err != nil{
                                   print((err?.localizedDescription)!)
@@ -491,10 +503,11 @@ func sendImageMsg(data:Data, uid:String, date:Date){
                               }
                 
                 
-                   }
+                   }*/
+                updateDB(uid: uid, msg: "", date: date, tip: "img", url: "\(url!)")
         }
         
-       
+   
         
     }
     
@@ -502,7 +515,7 @@ func sendImageMsg(data:Data, uid:String, date:Date){
 
 
 
-struct OpponentMessage: View {
+/*struct OpponentMessage: View {
  
  @State var messageType : String
  @State var message : String
@@ -511,24 +524,10 @@ struct OpponentMessage: View {
  
     var body: some View {
         HStack {
-             if messageType == "img"{
-                AnimatedImage(url: URL(string: url)!).resizable().renderingMode(.original).frame(width: 150, height: 150).clipShape(ChatBubble(mymsg:false))
-             Spacer()
-             }
-             else{
-                
-                     Text(message)
-                                                   .padding(10)
-                                                   .background(Color.green)
-                                                   .clipShape(ChatBubble(mymsg: false))
-                                                   .foregroundColor(.white)
-                
-  Spacer()
-                                                        
-             }
+             
             
            
         }
     }
 }
-
+*/
